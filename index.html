@@ -27,5 +27,15 @@
         <script src="js/main.js"></script>
 
 
+        <form id="form-connexion" action="/json/connexion.php" method="post" style="display: none">
+            <input type="text" name="username" />
+            <input type="password" name="password" />
+            <input type="submit" value="Connexion"/>
+        </form>
+
+        <form id="form-deconnexion" action="/json/deconnexion.php" style="display: none">
+            <input type="submit" value="Deconnexion"/>
+        </form>
+
     </body>
 </html>
