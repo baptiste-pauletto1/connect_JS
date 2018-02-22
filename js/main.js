@@ -1,6 +1,10 @@
 (function ()  {
     "use strict";
 
+    let erreurCritique =
+        "Une erreur critique vient de se produire," + //Spreading mail adress in order to provide bots from getting it.
+        "veuillez contacter l'administrateur à cette adresse mail : baptistep." + ((true) ? 'con' : "") + "tact@gm" +"a"+"il"+".co"+"m";
+
     $(() => {
         $.ajax({
             url:'/json/est_connecte.php'
@@ -11,7 +15,7 @@
                 $('#form-connexion').show();
             }
         }).fail(function () {
-            alert('aie aie aie ! on se co')
+            $("body").html(erreurCritique);
         });
 
         $('#form-connexion').submit(function () {
@@ -20,14 +24,11 @@
                method: $(this).attr('method'),
                data: $(this).serialize()
            })
-               .done(function (data) {
-                   if(data.est_connecte) {
-                       $('#form-deconnexion').show();
-                   }
+               .done(function () {
                    window.location.reload();
                })
                .fail(function () {
-                   alert('aie aie aie ! on se co')
+                   $("body").html(erreurCritique);
                });
             return false;
         });
@@ -36,16 +37,12 @@
                 url: $(this).attr('action'),
                 method: $(this).attr('method'),
                 data: $(this).serialize(),
-
             })
-                .done(function (data) {
-                    if(data.est_connecte) {
-                        $('#form-connexion').show();
-                    }
+                .done(function () {
                     window.location.reload();
                 })
                 .fail(function () {
-                    alert('Aie aie aie ! on déco pas');
+                    $("body").html(erreurCritique);
                 });
             return false;
         });
