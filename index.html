@@ -12,6 +12,7 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
@@ -30,11 +31,11 @@
         <form id="form-connexion" action="/json/connexion.php" method="post" style="display: none">
             <input type="text" name="username" />
             <input type="password" name="password" />
-            <input type="submit" value="Connexion"/>
+            <input class="btn btn-light" type="submit" value="Connexion"/>
         </form>
 
         <form id="form-deconnexion" action="/json/deconnexion.php" style="display: none">
-            <input type="submit" value="Deconnexion"/>
+            <input class="form-control" type="submit" value="Deconnexion"/>
         </form>
 
     </body>
